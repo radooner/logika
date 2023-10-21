@@ -1,0 +1,57 @@
+from  PyQt5.QtCore import Qt
+from PyQt5.QtWidget import (
+    QAppication, QWidget, QTableWidget,
+    QListWidget, QFormLayout, QLineEdit,
+    QPushButton, QSpinBox, QLabel, QRadioButton, QButtonGroup, QGroupBox, QHBoxayout, QVBoxLayout,QInputDialog,QTextEdit)
+import json
+app=QAppication([])
+win=QWidget()
+win.setWindowTitle("Розумні замітки")
+win.resize((900, 600))
+
+
+
+
+
+list_notes=QListWidget()
+list_notes_label=QLabel("Список заміток")
+
+btn_note_create=QPushButton("Створити замітку")
+btn_note_delete=QButtonGroup("Видалити замітку")
+btn_note_save=QPushButton("Зберегти замітку")
+
+
+input_tag=QLineEdit()
+input_tag.setPlaceholderText("Введіть тег...")
+input_text=QTextEdit()
+
+btn_tag_add=QPushButton("Створити замітку")
+btn_tag_delete=QButtonGroup("Видалити замітку")
+btn_tag_search=QPushButton("Зберегти замітку")
+
+list_tag=QListWidget()
+list_tag_label=QLabel("Список тегів")
+
+
+layout_notes=QHBoxayout()
+col_1=QVBoxLayout()
+col_1.addWidget(input_text)
+
+col_2=QVBoxLayout()
+col_2.addWidget(list_tag_label)
+col_2.addWidget(list_notes_label)
+
+row_1=QHBoxayout()
+row_1.addWidget(btn_note_create)
+row_1.addWidget(btn_note_delete)
+
+row_2=QHBoxayout()
+row_2.addWidget(btn_tag_add)
+row_2.addWidget(btn_tag_delete)
+
+col_2.addLayout(row_1)
+col_2.addLayout(row_2)
+
+
+
+
